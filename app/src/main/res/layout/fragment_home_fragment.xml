@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.Navigation_Fragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:id="@+id/topline"
+        android:background="@color/color_dark_blue"
+        android:layout_height="wrap_content">
+
+        <!--        TopView-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="30dp"
+            android:id="@+id/TopView"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="Home"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/male"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/User_image"
+                android:layout_marginStart="10dp"
+                android:text="Live Jobs"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="30sp"/>
+
+
+        </RelativeLayout>
+        <!-- ______-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/TopView"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginBottom="20dp"
+                android:layout_height="wrap_content">
+                <Button
+                    android:layout_width="140dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/button_shape_three"
+                    android:layout_marginRight="10dp"
+                    android:text="Available Jobs"
+                    android:textStyle="bold"
+                    android:id="@+id/Available_Jobs"
+                    android:textAllCaps="false"
+                    android:layout_marginLeft="10dp"
+                    />
+
+                <Button
+                    android:layout_width="140dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/Previous_Jobs"
+                    android:text="My Jobs"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="@drawable/button_shape_tow"
+                    />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/topline"
+        android:id="@+id/searchline"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="7"
+            android:hint="Search job.."
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:layout_marginEnd="5dp"
+            android:inputType="text"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/four_side_border_curve_new_color"
+            android:layout_height="50dp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/filter"
+            android:background="@drawable/filter"
+            android:layout_height="match_parent"/>
+
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/searchrecycle"
+        android:layout_below="@+id/searchline"
+
+        android:layout_height="match_parent"/>
+
+
+
+
+
+</RelativeLayout>

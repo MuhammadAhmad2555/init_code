@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="20dp"
+    android:layout_margin="10dp"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        >
+
+
+        <TextView
+            android:id="@+id/dayTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="20dp"
+            android:text="Tuesday"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/daySwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/dayTextView"
+            android:layout_marginTop="8dp"
+            android:checked="true"
+            android:thumbTint="@color/color_dark_blue"
+            android:trackTint="@color/color_dark_blue"
+            />
+
+
+        <!-- Available All Day Text -->
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:id="@+id/lineview"
+            android:layout_below="@+id/timeline"
+            android:background="#B5B1B1"
+            android:layout_height="1dp"/>
+
+        <!-- From Time Text -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/timeline"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/daySwitch"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="From:"
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="10dp"
+                />
+
+
+            <TextView
+                android:id="@+id/fromTimeTextView"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="10:00 am"
+                android:textSize="14sp"
+                android:layout_marginLeft="3dp"
+               android:textColor="@color/color_dark_blue"
+                android:layout_marginTop="10dp"
+                />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:textAlignment="viewEnd"
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:layout_height="wrap_content"
+                android:text="To:"
+
+
+                android:layout_marginTop="8dp" />
+
+            <!-- To Time Text -->
+            <TextView
+                android:id="@+id/toTimeTextView"
+                android:layout_width="0dp"
+                android:layout_weight="0.30"
+                android:textAlignment="viewEnd"
+                android:paddingRight="10dp"
+                android:layout_height="wrap_content"
+                android:text="12:00 am"
+                android:textSize="14sp"
+               android:textColor="@color/color_dark_blue"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+
+        <!-- Edit Icon -->
+        <ImageView
+            android:id="@+id/editIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/baseline_edit_24"
+            android:layout_toStartOf="@id/daySwitch"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="16dp"/>
+
+        <!-- Delete Icon -->
+        <ImageView
+            android:id="@+id/deleteIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/baseline_delete_24"
+            android:layout_toStartOf="@id/editIcon"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"/>
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

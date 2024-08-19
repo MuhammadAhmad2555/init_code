@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:background="@color/color_dark_blue"
+        android:orientation="horizontal"
+        android:layout_marginTop="-3dp">
+
+
+
+        <!-- Available Jobs Button -->
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/Available_Jobs_layout"
+            android:padding="1dp"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/Pending_Bids"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:text="Completed Jobs"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:background="@color/transparent"
+                />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/Cancelled_jobs"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:text="Cancelled Jobs"
+                android:textColor="@color/white"
+                android:background="@color/transparent" />
+        </RelativeLayout>
+
+        <!-- Previous Jobs Button -->
+
+
+    </LinearLayout>
+
+</RelativeLayout>

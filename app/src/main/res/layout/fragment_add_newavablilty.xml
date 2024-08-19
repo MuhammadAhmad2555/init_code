@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.AddNewavablilty">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:id="@+id/toolbar"
+        android:background="@color/color_dark_blue"
+        android:layout_height="80dp">
+
+        <!--        TopView-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/TopView"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/btn_image"
+                android:layout_alignParentStart="true"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="44dp"
+                    android:id="@+id/backbtn"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/baseline_arrow_back_24"
+                    android:layout_height="44dp"/>
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="10dp"
+                android:layout_centerInParent="true"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/white"
+                    android:gravity="center_vertical"
+                    android:textStyle="bold"
+                    android:layout_height="match_parent"
+                    android:textSize="22sp"
+                    android:text="Add Your Availibility"/>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+        <!-- ______-->
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/toolbar"
+            android:id="@+id/cardforallweek"
+            app:cardElevation="30dp"
+            android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/radioline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp">
+
+            <CheckBox
+                android:id="@+id/radiotn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                />
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_toEndOf="@+id/radiotn"
+                android:text="All Week"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/multiplyfeildslayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/radioline"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+
+        </LinearLayout>
+
+
+
+        <Button
+            android:id="@+id/addnorebtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/multiplyfeildslayout"
+            android:background="@drawable/bordersforaddavabillity"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="15dp"
+            android:text="Add more" />
+
+
+    </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/cardforallweek"
+            android:id="@+id/card"
+            app:cardElevation="30dp"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/radiolinefromonday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp">
+
+                    <CheckBox
+                        android:id="@+id/radiotnformonday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true" />
+
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toEndOf="@+id/radiotnformonday"
+                        android:text="Monday"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/alldayline"
+                    android:layout_below="@+id/radiolinefromonday"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:id="@+id/radioforallday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toEndOf="@+id/radioforallday"
+
+                        android:text="All Day"
+                        android:textColor="@color/color_gray"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/layoutmonday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/alldayline"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical">
+
+
+                </LinearLayout>
+
+
+
+                <Button
+                    android:id="@+id/addnorebtnformonday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layoutmonday"
+                    android:background="@drawable/bordersforaddavabillity"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="Add more" />
+
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

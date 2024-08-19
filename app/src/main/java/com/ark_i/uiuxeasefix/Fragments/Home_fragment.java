@@ -19,7 +19,7 @@ import com.ark_i.uiuxeasefix.databinding.FragmentHomeFragmentBinding;
 public class Home_fragment extends Fragment {
 FragmentHomeFragmentBinding binding;
 
-
+//Updated code
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

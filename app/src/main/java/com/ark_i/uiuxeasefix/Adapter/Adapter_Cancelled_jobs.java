@@ -37,8 +37,6 @@ public class Adapter_Cancelled_jobs extends RecyclerView.Adapter<Adapter_Cancell
         ));
 
 
-
-
     }
 
 

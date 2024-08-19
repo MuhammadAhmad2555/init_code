@@ -37,9 +37,6 @@ FragmentCancelledJobsFragmentBinding binding;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-
-
         recyclerView = view.findViewById(R.id.cancelled_recycleView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         list = new ArrayList<>();

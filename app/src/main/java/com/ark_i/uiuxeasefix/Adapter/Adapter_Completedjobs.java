@@ -104,16 +104,6 @@ public class Adapter_Completedjobs extends RecyclerView.Adapter<Adapter_Complete
         holder.Status.setText(model.getStatus());
         holder.NumBags.setText(model.getNumBags());
 
-//        if (model.getStatus().equals("Pending")||model.getStatus().equals("pending")||model.getStatus().equals("PENDING")){
-//            holder.Status.getResources().getColor(R.color.color_orange);
-//        }
-//        if (model.getStatus().equals("UnSuccessful")||model.getStatus().equals("Unsuccessful")||model.getStatus().equals("unsuccessful")) {
-//            holder.Status.getResources().getColor(R.color.color_red);
-//        }
-
-
-
-
     }
 
     @Override

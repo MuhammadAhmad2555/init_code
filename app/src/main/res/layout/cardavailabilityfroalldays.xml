@@ -70,7 +70,7 @@
             android:layout_below="@+id/availableTextView"
             android:layout_height="1dp"/>
 
-        <!-- From Time Text -->
+
 
 <!--        <LinearLayout-->
 <!--            android:id="@+id/timeSlotsContainer"-->

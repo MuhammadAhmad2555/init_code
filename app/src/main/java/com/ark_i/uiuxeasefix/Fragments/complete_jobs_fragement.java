@@ -29,7 +29,6 @@ FragmentCompleteJobBinding binding;
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         binding = FragmentCompleteJobBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
@@ -37,7 +36,7 @@ FragmentCompleteJobBinding binding;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-                recyclerView = view.findViewById(R.id.recyclerView);
+        recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         list = new ArrayList<>();
         adapter = new Adapter_Completedjobs(getContext(), list);

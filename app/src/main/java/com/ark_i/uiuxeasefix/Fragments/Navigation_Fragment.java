@@ -53,6 +53,8 @@ public class Navigation_Fragment extends Fragment implements OnMapReadyCallback,
             }
         });
 
+
+
     }
 
     @Override
@@ -61,36 +63,31 @@ public class Navigation_Fragment extends Fragment implements OnMapReadyCallback,
 
         mMap = googleMap;
 
-        // Set the custom info window adapter
+
         CustomInfoWindowAdapter adapter = new CustomInfoWindowAdapter(requireContext());
         mMap.setInfoWindowAdapter(adapter);
 
-        // Dummy data for markers
+
         LatLng location1 = new LatLng(31.466125447680547, 74.37174804329312);
         LatLng location2 = new LatLng(31.966000, 74.371800);
         LatLng location3 = new LatLng(32.16774, 74.372);
 
 
-//        // Add markers with dummy data
+
         mMap.addMarker(new MarkerOptions()
                 .position(location1));
 
         mMap.addMarker(new MarkerOptions()
                 .position(location2));
-//
+
         mMap.addMarker(new MarkerOptions()
                 .position(location3));
-//
-//        mMap.addMarker(new MarkerOptions()
-//                .position(location3)
-//                .title("Location 3")
-//                .snippet("Details about Location 3"));
 
-        // Set the custom info window adapter
+
+
         mMap.setInfoWindowAdapter(new CustomInfoWindowAdapter(requireContext()));
 
-        // Set the zoom level and move the camera to the first location
-        float zoomLevel = 15f;
+        float zoomLevel = 12f;
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location1,zoomLevel));
     }
 

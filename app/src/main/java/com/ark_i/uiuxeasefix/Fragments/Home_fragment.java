@@ -21,7 +21,7 @@ FragmentHomeFragmentBinding binding;
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
       binding = FragmentHomeFragmentBinding.inflate(inflater,container,false);
         return  binding.getRoot();
@@ -33,29 +33,24 @@ FragmentHomeFragmentBinding binding;
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.UserImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentReplace(new chat_fragment());
-            }
-        });
+        binding.UserImage.setOnClickListener(v -> FragmentReplace(new chat_fragment()));
 
-        binding.filter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentReplace(new Avability());
-            }
-        });
+        binding.filter.setOnClickListener(v -> FragmentReplace(new Avability()));
     }
 
     void FragmentReplace(Fragment fragment){
-
+        if(getActivity()!=null){
 
             FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.Fragment_layout,fragment);
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.Fragment_layout,fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+
+        }
+
+
+
 
 
 

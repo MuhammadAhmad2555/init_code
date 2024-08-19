@@ -63,13 +63,16 @@ ArrayList<ModelClassForAvability> list;
     }
 
     private void Fragment(Fragment fragment) {
-        FragmentManager fragmentManager =getActivity().getSupportFragmentManager();
-        if(fragmentManager!=null){
+        if (getActivity() != null) {
+            FragmentManager fragmentManager =getActivity().getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.Fragment_layout,fragment);
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
         }
+
+
+
 
     }
 }

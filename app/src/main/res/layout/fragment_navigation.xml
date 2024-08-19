@@ -58,7 +58,7 @@
                     android:layout_width="140dp"
                     android:layout_height="35dp"
 
-                    android:background="@drawable/button_shape"
+                    android:background="@drawable/buttonavaldesign"
                     android:layout_marginRight="10dp"
                     android:text="Available Jobs"
                     android:textStyle="bold"
@@ -81,8 +81,6 @@
 
 
         </RelativeLayout>
-
-
 
 
     </RelativeLayout>

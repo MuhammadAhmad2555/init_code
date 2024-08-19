@@ -1,7 +1,6 @@
 package com.ark_i.uiuxeasefix.Fragments;
 
-import android.app.TimePickerDialog;
-import android.icu.util.Calendar;
+
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -9,22 +8,30 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.CompoundButton;
 
-import android.widget.TextView;
-import android.widget.TimePicker;
-import android.widget.Toast;
+
+import com.ark_i.uiuxeasefix.Adapter.AddNewAvaibilityAdapter;
+
+import com.ark_i.uiuxeasefix.Model_classes.ModelClassForAddNewAvaibility;
 
 import com.ark_i.uiuxeasefix.R;
 import com.ark_i.uiuxeasefix.databinding.FragmentAddNewavabliltyBinding;
 
+import java.util.ArrayList;
+
 public class AddNewavablilty extends Fragment  {
     FragmentAddNewavabliltyBinding binding;
+    RecyclerView recyclerView;
+    AddNewAvaibilityAdapter adapter;
+
+    ArrayList<ModelClassForAddNewAvaibility> list;
+
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -34,26 +41,28 @@ public class AddNewavablilty extends Fragment  {
     }
 
 
+
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        addView();
 
-            binding.radiotn.setOnCheckedChangeListener((buttonView, isChecked) -> {
-                if (isChecked){
-                    Toast.makeText(requireContext(), "IM CHECKED", Toast.LENGTH_SHORT).show();
-                }else {
-                    binding.addnorebtn.setSelected(false);
-                }
-            });
+        recyclerView = view.findViewById(R.id.daysadapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        list = new ArrayList<>();
+        adapter = new AddNewAvaibilityAdapter(getContext(), list);
+        recyclerView.setAdapter(adapter);
 
 
-
-
-
-
-        binding.addnorebtn.setOnClickListener(v -> addView());
-
+        list.add(new ModelClassForAddNewAvaibility("ALL WEEK","",""));
+        list.add(new ModelClassForAddNewAvaibility("Monday","",""));
+        list.add(new ModelClassForAddNewAvaibility("Tuesday","",""));
+        list.add(new ModelClassForAddNewAvaibility("Wednesday","",""));
+        list.add(new ModelClassForAddNewAvaibility("Thursday","",""));
+        list.add(new ModelClassForAddNewAvaibility("Friday","",""));
+        list.add(new ModelClassForAddNewAvaibility("Saturaday","",""));
+        list.add(new ModelClassForAddNewAvaibility("sunday","",""));
         binding.backbtn.setOnClickListener(v -> Fragment(new Avability()));
 
 
@@ -63,96 +72,24 @@ public class AddNewavablilty extends Fragment  {
 
 
 
+
+
     }
+
+
+
+
 
     private void Fragment(Fragment fragment) {
-        FragmentManager fragmentManager =getActivity().getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.Fragment_layout,fragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
-    }
-
-
-
-    private void addView() {
-        View view  = getLayoutInflater().inflate(R.layout.addrowfromto,null,false);
-
-               Button save = view.findViewById(R.id.saveButton);
-
-              TextView editTextfrom =view.findViewById(R.id.fromTimeInput);
-        TextView editTexttp =view.findViewById(R.id.toTimeInput);
-
-
-        editTextfrom.setOnClickListener(v -> {
-            Calendar calendar = Calendar.getInstance();
-
-            int hour = calendar.get(Calendar.HOUR_OF_DAY);
-            int minute = calendar.get(Calendar.MINUTE);
-
-            TimePickerDialog timePickerDialog = new TimePickerDialog(
-                    getContext(),
-                    new TimePickerDialog.OnTimeSetListener() {
-                        @Override
-                        public void onTimeSet(@NonNull TimePicker view1, int hourOfDay, int minute) {
-                            // Format time in 12-hour format with AM/PM
-                            String time = String.format("%02d:%02d %s",
-                                    hourOfDay % 12 == 0 ? 12 : hourOfDay % 12,
-                                    minute,
-                                    hourOfDay < 12 ? "AM" : "PM");
-                            editTextfrom.setText(time);
-                        }
-                    },
-                    hour,
-                    minute,
-                    true
-            );
-            timePickerDialog.show();
-        });
-        editTexttp.setOnClickListener(v -> {
-            Calendar calendar = Calendar.getInstance();
-
-            int hour = calendar.get(Calendar.HOUR_OF_DAY);
-            int minute = calendar.get(Calendar.MINUTE);
-
-            TimePickerDialog timePickerDialog = new TimePickerDialog(
-                    getContext(),
-                    new TimePickerDialog.OnTimeSetListener() {
-                        @Override
-                        public void onTimeSet(@NonNull TimePicker view12, int hourOfDay, int minute) {
-                            // Format time in 12-hour format with AM/PM
-                            String time = String.format("%02d:%02d %s",
-                                    hourOfDay % 12 == 0 ? 12 : hourOfDay % 12,
-                                    minute,
-                                    hourOfDay < 12 ? "AM" : "PM");
-
-                            editTexttp.setText(time);
-                        }
-                    },
-                    hour,
-                    minute,
-                    true
-            );
-            timePickerDialog.show();
-        });
-
-        save.setOnClickListener(v -> {
-            TextView editTextfromtime = view.findViewById(R.id.fromTimeInput);
-            TextView editTexttotime = view.findViewById(R.id.toTimeInput);
-            String from_time = editTextfromtime.getText().toString();
-            String to_time = editTexttotime.getText().toString();
-            Toast.makeText(requireContext(), "TIME SELECTED "+from_time+" "+to_time, Toast.LENGTH_LONG).show();
-
-
-
-
-        });
-        binding.multiplyfeildslayout.addView(view);
-
+        if(getActivity()!=null){
+            FragmentManager fragmentManager =getActivity().getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.Fragment_layout,fragment);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
+        }
 
     }
-
-
 
 
 }

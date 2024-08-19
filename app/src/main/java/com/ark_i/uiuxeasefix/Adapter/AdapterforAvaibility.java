@@ -6,8 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.Switch;
+
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -52,41 +51,6 @@ public class AdapterforAvaibility extends RecyclerView.Adapter<AdapterforAvaibil
         holder.from.setText(model.getTimeFrom());
         holder.to.setText(model.getTimeTo());
         holder.day.setText(model.getDayname());
-
-//        String[] fromTimes = model.getTimeFrom();
-//        String[] toTimes = model.getTimeTo();
-//        if(model.getDayname().equals("Monday")){
-//            for (int i = 0; i < model.getTimeFrom().length(); i++) {
-//                LinearLayout timeSlotLayout = (LinearLayout) LayoutInflater.from(context)
-//                        .inflate(R.layout.ime_slot_item, holder.linearLayout, false);
-//
-//                TextView fromTimeTextView = timeSlotLayout.findViewById(R.id.fromTimeTextView);
-//                TextView toTimeTextView = timeSlotLayout.findViewById(R.id.toTimeTextView);
-//
-//                fromTimeTextView.setText("From: " + model.getTimeFrom());
-//                toTimeTextView.setText("To: " + model.getTimeTo());
-//
-//                holder.linearLayout.addView(timeSlotLayout);
-//            }
-//        }else if(model.getDayname().equals("Tuesday")){
-//
-//        } else if (model.getDayname().equals("Wednesday")) {
-//            for (int i = 0; i < model.getTimeFrom().length(); i++) {
-//                LinearLayout timeSlotLayout = (LinearLayout) LayoutInflater.from(context)
-//                        .inflate(R.layout.ime_slot_item, holder.linearLayout, false);
-//
-//                TextView fromTimeTextView = timeSlotLayout.findViewById(R.id.fromTimeTextView);
-//                TextView toTimeTextView = timeSlotLayout.findViewById(R.id.toTimeTextView);
-//
-//                fromTimeTextView.setText("From: " + model.getTimeFrom());
-//                toTimeTextView.setText("To: " + model.getTimeTo());
-//
-//                holder.linearLayout.addView(timeSlotLayout);
-//            }
-//        }
-
-
-
 
 
 
@@ -136,7 +100,7 @@ public class AdapterforAvaibility extends RecyclerView.Adapter<AdapterforAvaibil
         return list.size();
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder{
+    static class MyViewHolder extends RecyclerView.ViewHolder{
             TextView day,from,to,avaltext,titlefrom,titileto;
             SwitchCompat aSwitch;
             ImageView imagecheck;
